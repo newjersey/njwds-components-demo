@@ -1,47 +1,57 @@
-# Astro Starter Kit: Minimal
+# Astro Demo
 
-```sh
-npm create astro@latest -- --template minimal
+## How to run the example
+
+1. Make sure you're in the `demos/astro` directory.
+2. Run `npm install`
+3. Run `npm run dev`
+
+## How to use njwds-components in Astro
+
+### General setup
+
+Whether you want to use NJWDS web or React components, do the following steps.
+
+#### Register web components
+
+Add the following script element to each Astro page.
+
+```HTML
+    <script>
+      import { defineCustomElements } from "@newjersey/stencil-react-export/packages/stencil-library/loader";
+      defineCustomElements();
+    </script>
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+In this example, the script has been added to `src/layouts/Layout.astro`, which
+we can wrap each Astro page in.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+#### Import styles
 
-## 🚀 Project Structure
+Add styles by importing the NJWDS stylesheet into the front matter for every Astro page.
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```ts
+---
+import "@newjersey/stencil-react-export/packages/stencil-library/dist/stencil-library/css/styles.css";
+---
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Like the `defineCustomElements` script, the CSS import has been placed in `src/layouts/Layout.astro` in this example.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### React Components
 
-Any static assets, like images, can be placed in the `public/` directory.
+NJWDS React components can be imported from `@newjersey/stencil-react-export`
 
-## 🧞 Commands
+```ts
+---
+import { NjwdsAlert, NjwdsBanner } from "@newjersey/stencil-react-export";
+---
+```
 
-All commands are run from the root of the project, from a terminal:
+When using an NJWDS React component within an Astro component, make sure to add the `client:only` directive.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```html
+<NjwdsBanner client:only="react" />
+```
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+A full example of how to use both web and React components can be found in `src/pages/index.astro`.

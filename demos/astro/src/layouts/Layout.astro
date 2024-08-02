@@ -1,0 +1,29 @@
+---
+import "@newjersey/stencil-react-export/packages/stencil-library/dist/stencil-library/css/styles.css";
+
+interface Props {
+  title: string;
+}
+
+const { props } = Astro;
+---
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{props.title}</title>
+    <script>
+      import { defineCustomElements } from "@newjersey/stencil-react-export/packages/stencil-library/loader";
+      defineCustomElements();
+    </script>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

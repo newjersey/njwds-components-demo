@@ -1,47 +1,28 @@
 ---
-import "@newjersey/stencil-react-export/packages/stencil-library/dist/stencil-library/css/styles.css";
-import Banner from "../components/Banner";
-import ButtonWithCounter from "../components/ButtonWithCounter";
+import { NjwdsAlert, NjwdsBanner } from "@newjersey/stencil-react-export";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-    <script>
-      import { defineCustomElements } from "@newjersey/stencil-react-export/packages/stencil-library/loader";
-      defineCustomElements();
-    </script>
-  </head>
-  <body>
-    <h1>Static Web Components Example</h1>
-    <h2>My-Component</h2>
-    <my-component first="{Test First Name}" last="{Test Last Name}"
-    ></my-component>
-
-    <h2>Banner</h2>
-    <h3>Static</h3>
-    <njwds-banner></njwds-banner>
-    <h3>React</h3>
-    <Banner client:only="react" />
-    <h2>Alert</h2>
-    <h3>Static</h3>
-    <njwds-alert type="warning" header-text="Warning">
-      <span
-        >Lorem ipsum dolor sit amet, <a href="javascript:void(0);"
-          >consectetur adipiscing</a
-        > elit, sed do eiusmod.</span
-      >
-    </njwds-alert>
-    <h3>React</h3>
-
-    <h2>Button</h2>
-    <h3>Static</h3>
-    <njwds-button> Default </njwds-button>
-    <h3>React</h3>
-    <ButtonWithCounter client:only="react">Add to Count</ButtonWithCounter>
-  </body>
-</html>
+<Layout title="Static Web Components Example">
+  <h1>Static Web Components Example</h1>
+  <h2>Banner Component</h2>
+  <h3>Static</h3>
+  <njwds-banner></njwds-banner>
+  <h3>React</h3>
+  <NjwdsBanner client:only="react" />
+  <h2>Alert Component</h2>
+  <h3>Static</h3>
+  <njwds-alert type="warning" header-text="Warning">
+    <span
+      >Lorem ipsum dolor sit amet, <a href="">consectetur adipiscing</a> elit, sed
+      do eiusmod.</span
+    >
+  </njwds-alert>
+  <h3>React</h3>
+  <NjwdsAlert client:only="react" type="warning" headerText="Warning">
+    <span
+      >Lorem ipsum dolor sit amet, <a href="">consectetur adipiscing</a> elit, sed
+      do eiusmod.</span
+    >
+  </NjwdsAlert>
+</Layout>
