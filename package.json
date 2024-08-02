@@ -1,7 +1,7 @@
 {
   "name": "stencil-react-export-tests",
   "workspaces": [
-    "packages/*"
+    "demos/*"
   ],
   "dependencies": {
     "@newjersey/stencil-react-export": "^0.0.35"
