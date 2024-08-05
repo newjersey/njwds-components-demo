@@ -28,8 +28,8 @@ Add a `<script>` tag referencing the entry script served on unpkg.
 
 ## Loading a specific version
 
-If you would like to load a specific version of `njwds-components`, you can add a version number to the unpkg link. For example:
+If you would like to load a specific version of `njwds-components`, you can add a version number to the unpkg link.
 
 ```
-https://unpkg.com/@newjersey/njwds-components**@0.1.1**/packages/stencil-library/dist/stencil-library/stencil-library.esm.js
+https://unpkg.com/@newjersey/njwds-components@0.1.1/packages/stencil-library/dist/stencil-library/stencil-library.esm.js
 ```
