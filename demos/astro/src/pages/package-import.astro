@@ -1,0 +1,28 @@
+---
+import "@newjersey/njwds-components/packages/stencil-library/dist/stencil-library/css/styles.css";
+---
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>NJWDS Component Astro Demo - Package Import</title>
+    <script>
+      import "@newjersey/njwds-components/packages/stencil-library/dist/components/njwds-alert";
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>NJWDS Component Astro Demo - Package Import</h1>
+      <njwds-alert type="warning" header-text="Warning">
+        <span
+          >Lorem ipsum dolor sit amet, <a href="">consectetur adipiscing</a> elit,
+          sed do eiusmod.</span
+        >
+      </njwds-alert>
+    </main>
+  </body>
+</html>
