@@ -20,7 +20,7 @@ Add the following script element to each Astro page.
 
 ```HTML
     <script>
-      import { defineCustomElements } from "@newjersey/stencil-react-export/packages/stencil-library/loader";
+      import { defineCustomElements } from "@newjersey/njwds-components/packages/stencil-library/loader";
       defineCustomElements();
     </script>
 ```
@@ -34,22 +34,23 @@ Add styles by importing the NJWDS stylesheet into the front matter for every Ast
 
 ```astro
 ---
-import "@newjersey/stencil-react-export/packages/stencil-library/dist/stencil-library/css/styles.css";
+import "@newjersey/njwds-components/packages/stencil-library/dist/stencil-library/css/styles.css";
 ---
 ```
 
 Like the `defineCustomElements` script, the CSS import has been placed in [`src/layouts/Layout.astro`](https://github.com/newjersey/njwds-components-demo/blob/main/demos/astro/src/layouts/Layout.astro) in this example.
 
 #### Add assets
-To load assets, copy the `img` folder from `/node_modules/@newjersey/stencil-react-export/packages/stencil-library/dist/stencil-library/img` into the `public` folder. 
+
+To load assets, copy the `img` folder from `/node_modules/@newjersey/njwds-components/packages/stencil-library/dist/stencil-library/img` into the `public` folder.
 
 ### React Components
 
-NJWDS React components can be imported from `@newjersey/stencil-react-export` in the front matter of an Astro component or page.
+NJWDS React components can be imported from `@newjersey/njwds-components` in the front matter of an Astro component or page.
 
 ```astro
 ---
-import { NjwdsAlert, NjwdsBanner } from "@newjersey/stencil-react-export";
+import { NjwdsAlert, NjwdsBanner } from "@newjersey/njwds-components";
 ---
 ```
 

@@ -1,5 +1,5 @@
 "use client"
-import { NjwdsAlert } from "@newjersey/stencil-react-export";
+import { NjwdsAlert } from "@newjersey/njwds-components";
 
 export default function NjwdsWarningAlertServer() {
     return (

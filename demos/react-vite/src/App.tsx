@@ -1,4 +1,4 @@
-import "@newjersey/stencil-react-export/packages/stencil-library/dist/components/njwds-alert"
+import "@newjersey/njwds-components/packages/stencil-library/dist/components/njwds-alert"
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 "use client"
 
-import { NjwdsButton } from "@newjersey/stencil-react-export";
+import { NjwdsButton } from "@newjersey/njwds-components";
 import { useState, type ReactNode } from "react";
 
 export default function ReactButtonWithCounter(props: { children: ReactNode }) {

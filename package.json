@@ -1,9 +1,9 @@
 {
-  "name": "stencil-react-export-tests",
+  "name": "njwds-components-demo",
   "workspaces": [
     "demos/*"
   ],
   "dependencies": {
-    "@newjersey/stencil-react-export": "^0.0.35"
+    "@newjersey/njwds-components": "^0.1.1"
   }
 }

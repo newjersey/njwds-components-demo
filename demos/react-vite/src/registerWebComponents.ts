@@ -1,6 +1,6 @@
 // taken from https://github.com/ionic-team/stencil/issues/1090#issuecomment-501124883
 
-import { JSX as LocalJSX } from "@newjersey/stencil-react-export/packages/stencil-library/loader";
+import { JSX as LocalJSX } from "@newjersey/njwds-components/packages/stencil-library/loader";
 import { HTMLAttributes } from "react";
 
 type StencilToReact<T> = {
@@ -11,6 +11,7 @@ type StencilToReact<T> = {
 };
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   export namespace JSX {
     interface IntrinsicElements
       extends StencilToReact<LocalJSX.IntrinsicElements> {}

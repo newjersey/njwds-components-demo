@@ -1,5 +1,5 @@
 ---
-import "@newjersey/stencil-react-export/packages/stencil-library/dist/stencil-library/css/styles.css";
+import "@newjersey/njwds-components/packages/stencil-library/dist/stencil-library/css/styles.css";
 
 interface Props {
   title: string;
@@ -17,7 +17,7 @@ const { props } = Astro;
     <meta name="generator" content={Astro.generator} />
     <title>{props.title}</title>
     <script>
-      import { defineCustomElements } from "@newjersey/stencil-react-export/packages/stencil-library/loader";
+      import { defineCustomElements } from "@newjersey/njwds-components/packages/stencil-library/loader";
       defineCustomElements();
     </script>
   </head>

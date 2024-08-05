@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import "@newjersey/stencil-react-export/packages/stencil-library/dist/stencil-library/css/styles.css";
-import Script from "next/script";
+import "@newjersey/njwds-components/packages/stencil-library/dist/stencil-library/css/styles.css";
 import DefineCustomElementsLoader from "@/components/DefineCustomElementsLoader";
 
 export const metadata: Metadata = {
