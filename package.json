@@ -1,5 +1,5 @@
 {
-  "name": "njwds-components-demo",
+  "private": true,
   "workspaces": [
     "demos/*"
   ],
