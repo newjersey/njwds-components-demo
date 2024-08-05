@@ -29,7 +29,7 @@ There are two options for importing web components in Astro:
 
 ### Adding a component-specific package import
 
-Import the specific component you want within a`<script>` tag in the `.astro` file. This allows you to easy colocate the component import with its usage.
+Import the specific component you want within a`<script>` tag in the `.astro` file. This allows you to easily colocate the component import with its usage.
 
 ```astro
 <script>
