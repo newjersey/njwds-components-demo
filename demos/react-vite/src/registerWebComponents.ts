@@ -12,7 +12,7 @@ type StencilToReact<T> = {
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
-  export namespace JSX {
+  export namespace React.JSX {
     interface IntrinsicElements
       extends StencilToReact<LocalJSX.IntrinsicElements> {}
   }

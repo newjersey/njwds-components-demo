@@ -1,15 +1,35 @@
-import "@newjersey/njwds-components/packages/stencil-library/dist/components/njwds-alert"
+
+import { useState } from "react"
+import DefineCustomElementsExample from "./components/DefineCustomElementsExample"
+import PackageImportExample from "./components/PackageImportExample"
 
 function App() {
+
+  const [activeExample, setActiveExample] = useState(0)
   return (
     <>
-      <h1>Static Web Components Example</h1>
+      <header>
+        <ul>
+          <li>
+            <button onClick={() => setActiveExample(0)}>
+              Show package import example
+            </button>
+          </li>
+          <li>
+            <button onClick={() => setActiveExample(1)}>
+              Show defineCustomElements example
+            </button>
+          </li>
 
-      <h2>Alert</h2>
-      <njwds-alert type="warning">
-        <b slot="header">Warning</b>
-        <span>Lorem ipsum dolor sit amet, <a href="">consectetur adipiscing</a> elit, sed do eiusmod.</span>
-      </njwds-alert>
+        </ul>
+      </header>
+      <main>
+        {activeExample === 0
+          ? <PackageImportExample />
+          : <DefineCustomElementsExample />
+        }
+      </main>
+
     </>
   )
 }
