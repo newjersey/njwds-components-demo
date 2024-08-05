@@ -1,14 +1,14 @@
 # React + Vite Demo
 
-This demo uses Vite to setup React, but other development environments such as Create React App should work very similarly as long as you're using client-side rendering.
+This demo uses Vite to set up React, but other development environments such as Create React App should work very similarly as long as you're using client-side rendering.
 
-For an example of server-side rendering, refer to the [`next-js` example](<(https://github.com/newjersey/njwds-components-demo/blob/main/demos/next-js)>)
+For an example of server-side rendering, refer to the [`next-js` example](https://github.com/newjersey/njwds-components-demo/blob/main/demos/next-js)
 
 ## Running the Example
 
 1. Make sure you're in the `demos/react-vite` directory.
-2. Run `npm install`
-3. Run `npm run dev`
+2. Run `npm install`.
+3. Run `npm run dev`.
 
 Use the buttons at the top of the site to switch between the defineCustomElement and package import examples.
 
@@ -24,7 +24,7 @@ import "@newjersey/njwds-components/packages/stencil-library/dist/stencil-librar
 
 ### Defining custom JSX elements
 
-First, we want to define custom JSX elements for web components by extending `React.JSX`. To do this, add a file (e.g. [`registerWebComponents.ts`](https://github.com/newjersey/njwds-components-demo/blob/main/demos/astro/src/registerWebComponents.ts)) with the following code:
+First, we want to define custom JSX elements for web components by extending `React.JSX`. To do this, add a file (e.g. [`registerWebComponents.ts`](https://github.com/newjersey/njwds-components-demo/blob/main/demos/react-vite/src/registerWebComponents.ts)) with the following code:
 
 ```ts
 import { JSX as LocalJSX } from "@newjersey/njwds-components/packages/stencil-library/loader";
@@ -60,7 +60,7 @@ Import the specific component you want within the React component. This allows y
 import "@newjersey/njwds-components/packages/stencil-library/dist/components/njwds-alert";
 ```
 
-An example usage can be found in [`src/components/PackageImportExample.tsx`](https://github.com/newjersey/njwds-components-demo/blob/main/demos/astro/src/components/PackageImportExample.tsx).
+An example usage can be found in [`src/components/PackageImportExample.tsx`](https://github.com/newjersey/njwds-components-demo/blob/main/demos/react-vite/src/components/PackageImportExample.tsx).
 
 #### Registering web components using `defineCustomElements`
 
@@ -72,13 +72,13 @@ useEffect(() => {
 });
 ```
 
-An example usage can be found in [`src/components/DefineCustomElementsExample.tsx`](https://github.com/newjersey/njwds-components-demo/blob/main/demos/astro/src/components/DefineCustomElementsExample.tsx).
+An example usage can be found in [`src/components/DefineCustomElementsExample.tsx`](https://github.com/newjersey/njwds-components-demo/blob/main/demos/react-vite/src/components/DefineCustomElementsExample.tsx).
 
 **Note:** This will also make all React components available. Therefore, if you would like to use both React and web components within your project, using `defineCustomElements` may be preferred.
 
 ## Using React components
 
-To use React components, first register all NJWDS components using `definCustomElements` as described in the section above.
+To use React components, first register all NJWDS components using `defineCustomElements` as described in the section above.
 
 ### Loading assets
 
@@ -89,17 +89,21 @@ To load assets, copy the `img` folder from `/node_modules/@newjersey/njwds-compo
 To import a specific React component, add an import statement from `@newjersey/njwds-components` in the React component.
 
 ```tsx
-import { NjwdsAlert, NjwdsBanner } from "@newjersey/njwds-components";
+import { defineCustomElements, NjwdsAlert } from "@newjersey/njwds-components"
+import { useEffect } from "react"
 
-import "@newjersey/njwds-components/packages/stencil-library/dist/components/njwds-alert";
+export default function DefineCustomElementsExample() {
+    useEffect(() => {
+        defineCustomElements()
+    })
 
-export default function PackageImportExample() {
     return (
-      <njwds-alert type="warning">
+     <NjwdsAlert type="warning">
           <span
           >Lorem ipsum dolor sit amet, <a href="">consectetur adipiscing</a> elit, sed
               do eiusmod.
           </span>
-      </njwds-alert>
+      </NjwdsAlert>
     )
+}
 ```
