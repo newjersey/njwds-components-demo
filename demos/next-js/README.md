@@ -3,14 +3,14 @@
 ## Running the Example
 
 1. Make sure you're in the `demos/next-js` directory.
-2. Run `npm install`
-3. Run `npm run dev`
+2. Run `npm install`.
+3. Run `npm run dev`.
 
 Use the links to navigate between the defineCustomElement and package import examples.
 
 ## Adding styles
 
-Whether you want to use NJWDS web or React components, make NJWDS styles available globally by importing the stylesheet in the roote [`layout.tsx`](https://github.com/newjersey/njwds-components-demo/blob/main/demos/next-js/src/app/layout.tsx).
+Whether you want to use NJWDS web or React components, make NJWDS styles available globally by importing the stylesheet in the [root `layout.tsx`](https://github.com/newjersey/njwds-components-demo/blob/main/demos/next-js/src/app/layout.tsx).
 
 ```ts
 import "@newjersey/njwds-components/packages/stencil-library/dist/stencil-library/css/styles.css";
