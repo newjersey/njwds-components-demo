@@ -47,7 +47,7 @@ declare global {
 
 ### Importing web components
 
-There are two options for importing web components in Astro:
+There are two options for importing web components:
 
 1. Adding a component-specific package import
 2. Registering all components using `defineCustomElements()`
@@ -89,21 +89,21 @@ To load assets, copy the `img` folder from `/node_modules/@newjersey/njwds-compo
 To import a specific React component, add an import statement from `@newjersey/njwds-components` in the React component.
 
 ```tsx
-import { defineCustomElements, NjwdsAlert } from "@newjersey/njwds-components"
-import { useEffect } from "react"
+import { defineCustomElements, NjwdsAlert } from "@newjersey/njwds-components";
+import { useEffect } from "react";
 
 export default function DefineCustomElementsExample() {
-    useEffect(() => {
-        defineCustomElements()
-    })
+  useEffect(() => {
+    defineCustomElements();
+  });
 
-    return (
-     <NjwdsAlert type="warning">
-          <span
-          >Lorem ipsum dolor sit amet, <a href="">consectetur adipiscing</a> elit, sed
-              do eiusmod.
-          </span>
-      </NjwdsAlert>
-    )
+  return (
+    <NjwdsAlert type="warning">
+      <span>
+        Lorem ipsum dolor sit amet, <a href="">consectetur adipiscing</a> elit,
+        sed do eiusmod.
+      </span>
+    </NjwdsAlert>
+  );
 }
 ```
