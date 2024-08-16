@@ -1,5 +1,9 @@
 ---
-import { NjwdsAlert, NjwdsBanner } from "@newjersey/njwds-components";
+import {
+  NjwdsAlert,
+  NjwdsBanner,
+  NjwdsButton,
+} from "@newjersey/njwds-components";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -25,4 +29,6 @@ import Layout from "../layouts/Layout.astro";
       do eiusmod.</span
     >
   </NjwdsAlert>
+  <h2>Button Component</h2>
+  <NjwdsButton client:only="react">Button Text</NjwdsButton>
 </Layout>
